@@ -1,6 +1,12 @@
 # framework-pedagogico-ia
 Un modelo tecnopedagógico para la creación de **Objetos de Aprendizaje Multimodales e Interactivos (OAMI)** aplicados a la enseñanza de TICs, Economía, Matemáticas y Mercadotecnia.
 
+---
+![License](https://img.shields.io/badge/Licencia-MIT-blue.svg)
+![Status](https://img.shields.io/badge/Estado-En_Desarrollo-brightgreen.svg)
+![Institution](https://img.shields.io/badge/Instituci%C3%B3n-Universidad_William_Osler-orange.svg)
+![Location](https://img.shields.io/badge/Ubicaci%C3%B3n-Zihuatanejo%2C_Guerrero-red.svg)
+---
 <!-- ETIQUETAS DE LENGUAJES Y TECNOLOGÍAS -->
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -9,13 +15,6 @@ Un modelo tecnopedagógico para la creación de **Objetos de Aprendizaje Multimo
 ![Jupyter](https://img.shields.io/badge/Jupyter_Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
-
----
-![License](https://img.shields.io/badge/Licencia-MIT-blue.svg)
-![Status](https://img.shields.io/badge/Estado-En_Desarrollo-brightgreen.svg)
-![Institution](https://img.shields.io/badge/Instituci%C3%B3n-Universidad_William_Osler-orange.svg)
-![Location](https://img.shields.io/badge/Ubicaci%C3%B3n-Zihuatanejo%2C_Guerrero-red.svg)
-
 ---
 
 ## 🎯 Objetivo General
