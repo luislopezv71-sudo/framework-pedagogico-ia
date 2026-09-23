@@ -1,5 +1,5 @@
 # framework-pedagogico-ia
-Un modelo tecnopedagógico para la creación de **Objetos de Aprendizaje Multimodales e Interactivos (OAMI)** aplicados a la enseñanza de TICs, Economía, Matemáticas y Mercadotecnia.
+Un modelo tecnopedagógico para la creación de **Objetos de Aprendizaje Multimodales e Interactivos (OAMI)** aplicados a la enseñanza de TICs, Economía, Matemáticas, Estadística, Investigación Aplicada y Mercadotecnia.
 
 ---
 ![License](https://img.shields.io/badge/Licencia-MIT-blue.svg)
