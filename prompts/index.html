@@ -71,29 +71,29 @@
           Ecosistema de Aprendizaje Multimodal e Interactivo (OAMI)
         </h2>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-          Desde la perspectiva académica moderna, este método se define como un <strong class="text-indigo-200">Diseño Instruccional Asistido por Inteligencia Artificial Generativa (GenAI-Assisted Instructional Design)</strong>. Utiliza una arquitectura en cascada donde el docente orquesta la IA para transformar progresiones curriculares en Objetos de Aprendizaje Multimodales e Interactivos (OAMI).
+          Desde la perspectiva académica moderna, este método se define como un <strong class="text-indigo-200">Diseño Instruccional Asistido por Inteligencia Artificial Generativa (GenAI-Assisted Instructional Design)</strong>. Utiliza una arquitectura en cascada donde el docente orquesta la IA para transformar progresiones curriculares en dos documentos estructurados de planeación didáctica y un Objeto de Aprendizaje Interactivo (OAMI) independiente por carpeta.
         </p>
         
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800/80">
           <div class="flex items-start gap-3">
-            <i class="fa-solid fa-sitemap text-indigo-400 text-lg mt-1"></i>
+            <i class="fa-solid fa-file-pen text-indigo-400 text-lg mt-1"></i>
             <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">1. Progresión Curricular</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Estructuración pedagógica y objetivos de aprendizaje.</p>
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider">1. Plan de Unidad (`.md`)</h4>
+              <p class="text-xs text-slate-400 mt-0.5">Estructuración pedagógica en `progresiones/[materia]/[unidad]/plan-unidad.md`.</p>
             </div>
           </div>
           <div class="flex items-start gap-3">
-            <i class="fa-solid fa-photo-film text-indigo-400 text-lg mt-1"></i>
+            <i class="fa-solid fa-podcast text-indigo-400 text-lg mt-1"></i>
             <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">2. Fuentes Multimodales</h4>
-              <p class="text-xs text-slate-400 mt-0.5">NotebookLM (Podcasts), diapositivas e infografías.</p>
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider">2. Fuente NotebookLM (`.txt`)</h4>
+              <p class="text-xs text-slate-400 mt-0.5">Documento maestro en `progresiones/[materia]/[unidad]/fuente-notebooklm.txt`.</p>
             </div>
           </div>
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-code text-indigo-400 text-lg mt-1"></i>
             <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">3. Artefacto HTML5</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Simuladores interactivos con feedback y guardado.</p>
+              <h4 class="text-xs font-bold text-white uppercase tracking-wider">3. Artefacto Modular (`index.html`)</h4>
+              <p class="text-xs text-slate-400 mt-0.5">Práctica interactiva en `artefactos/[materia]/[artefacto]/index.html`.</p>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@
           <h4 class="font-bold text-slate-800 text-base mb-1">Modelo TPACK</h4>
           <p class="text-xs text-blue-600 font-medium mb-2">Integración Disciplina + Pedagogía + TIC</p>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Sincronización armónica entre el conocimiento disciplinar (Economía, Matemáticas, TICs), la estrategia didáctica y la tecnología IA.
+            Sincronización armónica entre el conocimiento disciplinar, la estrategia didáctica y la tecnología de IA Generativa.
           </p>
         </div>
 
@@ -170,7 +170,7 @@
               <i class="fa-solid fa-wand-magic-sparkles text-indigo-600"></i>
               Generador Interactivo de Prompts Curriculares
             </h3>
-            <p class="text-sm text-slate-500 mt-1">Sigue las 3 fases del flujo de trabajo para construir tu unidad didáctica multimodal.</p>
+            <p class="text-sm text-slate-500 mt-1">Sigue el flujo de trabajo para construir los 2 documentos de planeación y el artefacto HTML5 en su propia carpeta.</p>
           </div>
         </div>
 
@@ -178,15 +178,19 @@
         <div class="flex flex-wrap gap-2 mt-6">
           <button id="tab-btn-1" onclick="switchTab(1)" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs transition-all flex items-center gap-2 bg-indigo-600 text-white shadow-md">
             <span class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px]">1</span>
-            Prompt 01: Progresión Didáctica
+            Doc 1: Plan de Unidad (.md)
           </button>
           <button id="tab-btn-2" onclick="switchTab(2)" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs transition-all flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200">
             <span class="w-5 h-5 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center text-[10px]">2</span>
-            Prompt 02: Fuente NotebookLM
+            Doc 2: Fuente NotebookLM (.txt)
           </button>
           <button id="tab-btn-3" onclick="switchTab(3)" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs transition-all flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200">
             <span class="w-5 h-5 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center text-[10px]">3</span>
-            Prompt 03: Artefacto HTML5
+            Artefacto 3: HTML5 (index.html)
+          </button>
+          <button id="tab-btn-4" onclick="switchTab(4)" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-xs transition-all flex items-center gap-2 bg-slate-100 text-slate-600 hover:bg-slate-200">
+            <span class="w-5 h-5 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center text-[10px]">4</span>
+            Paquete Completo & Rutas
           </button>
         </div>
       </div>
@@ -224,7 +228,13 @@
             <input type="text" id="input-tema" oninput="generateCurrentPrompt()" value="Sistemas de Ecuaciones Lineales y Aplicaciones" placeholder="Ej. Ley de la Oferta y la Demanda" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
           </div>
 
-          <!-- DURACIÓN DE LA PROGRESIÓN (NUEVO CAMPO) -->
+          <!-- CARPETA DE ARTEFACTO -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre Identificador de la Carpeta del Artefacto</label>
+            <input type="text" id="input-slug-artefacto" oninput="generateCurrentPrompt()" value="ecuaciones-lineales" placeholder="Ej. ecuaciones-lineales, oferta-demanda" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          </div>
+
+          <!-- DURACIÓN DE LA PROGRESIÓN -->
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Duración de la Progresión / Unidad</label>
             <input type="text" id="input-duracion" oninput="generateCurrentPrompt()" value="2 semanas / 6 sesiones de 50 min" placeholder="Ej. 10 horas estimadas, 4 sesiones de 1 hora" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
@@ -248,27 +258,34 @@
           </div>
 
           <!-- PARÁMETRO ADICIONAL PROMPT 3 -->
-          <div id="extra-param-p3" class="hidden pt-2 border-t border-slate-200">
+          <div id="extra-param-p3" class="pt-2 border-t border-slate-200">
             <label class="block text-xs font-semibold text-indigo-700 mb-1">Mecánica del Artefacto HTML</label>
             <input type="text" id="input-mecanica" oninput="generateCurrentPrompt()" value="Simulador gráfico interactivo con deslizadores de variables, gráfico en canvas y retroalimentación inmediata." class="w-full text-xs bg-indigo-50/50 border border-indigo-200 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
           </div>
 
-          <div class="pt-3">
+          <div class="pt-3 flex flex-col gap-2">
             <button onclick="saveProjectToLocal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold py-2.5 px-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-sm">
               <i class="fa-solid fa-bookmark text-indigo-400"></i> Guardar Proyecto en Memoria Local
             </button>
           </div>
         </div>
 
-        <!-- COLUMNA DERECHA: PROMPT RESULTANTE -->
+        <!-- COLUMNA DERECHA: PROMPT RESULTANTE Y RUTAS -->
         <div class="lg:col-span-7 flex flex-col">
-          <div class="flex items-center justify-between mb-2">
-            <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wider text-slate-500 flex items-center gap-2">
+          <div class="flex flex-wrap items-center justify-between mb-2 gap-2">
+            <h4 id="prompt-output-title" class="font-bold text-slate-800 text-sm uppercase tracking-wider text-slate-500 flex items-center gap-2">
               <i class="fa-solid fa-terminal text-indigo-600"></i> Prompt Generado (Copiar y Pegar en la IA)
             </h4>
-            <button onclick="copyPromptToClipboard()" id="copy-btn" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 border border-indigo-200">
-              <i class="fa-regular fa-copy"></i> Copiar Prompt
-            </button>
+            <div class="flex items-center gap-2">
+              <button onclick="copyPromptToClipboard()" id="copy-btn" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 border border-indigo-200">
+                <i class="fa-regular fa-copy"></i> Copiar Prompt
+              </button>
+            </div>
+          </div>
+
+          <!-- RUTA DESTINO DESTACADA -->
+          <div id="target-path-banner" class="mb-3 bg-indigo-950 text-indigo-200 border border-indigo-800 px-3.5 py-2 rounded-xl text-xs font-mono flex items-center justify-between">
+            <span id="target-path-text" class="truncate"><i class="fa-regular fa-folder-open text-indigo-400 mr-2"></i>Ruta destino: progresiones/[materia]/[unidad]/plan-unidad.md</span>
           </div>
 
           <div class="relative flex-grow min-h-[380px] bg-slate-900 text-slate-100 rounded-2xl p-4 font-mono text-xs leading-relaxed overflow-hidden border border-slate-800 shadow-inner">
@@ -320,6 +337,10 @@
         © 2026 Desarrollado por el <strong class="text-slate-300">catedrático Luis Arturo López Vergara</strong>. Primera edición 2026. Todos los derechos reservados.
       </p>
       <div class="pt-2 flex justify-center gap-4 text-xs text-slate-500">
+        <a href="https://luislopezv71-sudo.github.io/framework-pedagogico-ia/prompts/" target="_blank" class="hover:text-indigo-400 transition-colors flex items-center gap-1">
+          <i class="fa-solid fa-globe"></i> URL Oficial del Dashboard
+        </a>
+        <span class="text-slate-700">|</span>
         <a href="https://github.com/luislopezv71-sudo/framework-pedagogico-ia" target="_blank" class="hover:text-indigo-400 transition-colors flex items-center gap-1">
           <i class="fa-brands fa-github"></i> Repositorio GitHub
         </a>
@@ -378,6 +399,13 @@
       return selectVal;
     }
 
+    function getSlug(text) {
+      return text.toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'unidad-01';
+    }
+
     // Cambio de pestañas
     function switchTab(tabIndex) {
       activeTab = tabIndex;
@@ -393,32 +421,31 @@
         }
       });
 
-      // Mostrar/Ocultar parámetros extra de Prompt 3
-      const extraP3 = document.getElementById('extra-param-p3');
-      if (tabIndex === 3) {
-        extraP3.classList.remove('hidden');
-      } else {
-        extraP3.classList.add('hidden');
-      }
-
       generateCurrentPrompt();
     }
 
-    // Generador dinámico de Prompts
+    // Generador dinámico de Prompts y Rutas
     function generateCurrentPrompt() {
       const materia = getMateriaValue();
+      const materiaSlug = getSlug(materia);
       const tema = document.getElementById('input-tema').value || '[Tema o Unidad]';
+      const unidadSlug = getSlug(tema);
+      const artefactoSlug = getSlug(document.getElementById('input-slug-artefacto').value || tema);
       const duracion = document.getElementById('input-duracion').value || '[Duración Estimada]';
       const nivel = document.getElementById('input-nivel').value;
       const objetivo = document.getElementById('input-objetivo').value || '[Objetivo de Aprendizaje]';
       const mecanica = document.getElementById('input-mecanica').value || '[Mecánica interactiva]';
 
+      const banner = document.getElementById('target-path-banner');
+      const bannerText = document.getElementById('target-path-text');
       let promptText = '';
 
       if (activeTab === 1) {
+        bannerText.innerHTML = `<i class="fa-regular fa-file-code text-indigo-400 mr-2"></i>Guardar resultado en: <strong>progresiones/${materiaSlug}/${unidadSlug}/plan-unidad.md</strong>`;
+        
         promptText = `Actúa como un Diseñador Instruccional Senior experto en Educación Digital y Tecnología Educativa.
 
-Necesito que estructures una Progresión Didáctica completa y de alta calidad pedagógica bajo el modelo DUA (Diseño Universal para el Aprendizaje) y la Alineación Constructiva de John Biggs.
+Necesito que estructures la Planeación Didáctica (Documento 1 de 2) completa en formato Markdown bajo el modelo DUA (Diseño Universal para el Aprendizaje) y la Alineación Constructiva de John Biggs.
 
 INFORMACIÓN DEL CURSO:
 - Materia / Disciplina: ${materia}
@@ -427,7 +454,10 @@ INFORMACIÓN DEL CURSO:
 - Nivel Educativo: ${nivel}
 - Objetivo General de Aprendizaje: ${objetivo}
 
-POR FAVOR ESTRUCTURA LA RESPUESTA EN LAS SIGUIENTES SECCIONES:
+RUTA DE ARCHIVO PARA EL REPOSITORIO:
+progresiones/${materiaSlug}/${unidadSlug}/plan-unidad.md
+
+ESTRUCTURA REQUERIDA PARA EL ARCHIVO plan-unidad.md:
 
 1. FICHA TÉCNICA Y DIAGNÓSTICO
    - Resumen ejecutivo de la progresión (Dosificación estimada para: ${duracion}).
@@ -445,12 +475,14 @@ POR FAVOR ESTRUCTURA LA RESPUESTA EN LAS SIGUIENTES SECCIONES:
    - Cierre: Síntesis y metacognición.
 
 4. ESPECIFICACIÓN DEL ARTEFACTO PRÁCTICO SOBERANO
-   - Propuesta del simulador o ejercicio en HTML5 que el alumno debe resolver para demostrar dominio del tema.`;
+   - Propuesta del simulador o ejercicio en HTML5 que el alumno resolverá en la ruta: artefactos/${materiaSlug}/${artefactoSlug}/index.html`;
       
       } else if (activeTab === 2) {
+        bannerText.innerHTML = `<i class="fa-regular fa-file-lines text-indigo-400 mr-2"></i>Guardar resultado en: <strong>progresiones/${materiaSlug}/${unidadSlug}/fuente-notebooklm.txt</strong>`;
+
         promptText = `Actúa como un Curador de Contenidos Educativos y Diseñador Multimodal.
 
-Tu tarea es transformar la siguiente unidad didáctica en un DOCUMENTO FUENTE MAESTRO PARA NOTEBOOKLM, optimizado para generar Audio Overviews (Podcasts a dos voces), Guías de Estudio, FAQ y Esquemas para Diapositivas e Infografías.
+Tu tarea es transformar la siguiente unidad didáctica en el DOCUMENTO FUENTE MAESTRO PARA NOTEBOOKLM (Documento 2 de 2 en texto plano), optimizado para generar Audio Overviews (Podcasts a dos voces), Guías de Estudio, FAQ y Esquemas para Diapositivas e Infografías.
 
 INFORMACIÓN DE LA MATERIA:
 - Materia: ${materia}
@@ -459,7 +491,10 @@ INFORMACIÓN DE LA MATERIA:
 - Nivel: ${nivel}
 - Objetivo: ${objetivo}
 
-ESTRUCTURA REQUERIDA PARA EL DOCUMENTO FUENTE:
+RUTA DE ARCHIVO PARA EL REPOSITORIO:
+progresiones/${materiaSlug}/${unidadSlug}/fuente-notebooklm.txt
+
+ESTRUCTURA REQUERIDA PARA EL DOCUMENTO FUENTE (.txt):
 
 SECCIÓN 1: DOCUMENTO BASE DE PROFUNDIZACIÓN
 - Introducción narrativa conectada con el mundo real.
@@ -479,26 +514,62 @@ SECCIÓN 4: ESQUEMA VISUAL PARA DIAPOSITIVAS E INFOGRAFÍA
 - Guion visual diapositiva por diapositiva (Portada, Problema, Solución, Caso Práctico, Reto Final).`;
       
       } else if (activeTab === 3) {
+        bannerText.innerHTML = `<i class="fa-brands fa-html5 text-indigo-400 mr-2"></i>Guardar resultado en: <strong>artefactos/${materiaSlug}/${artefactoSlug}/index.html</strong>`;
+
         promptText = `Actúa como un Desarrollador Web Frontend Senior y Diseñador Instruccional especializado en Objetos de Aprendizaje Interactivos (OAMIs).
 
-Necesito que generes el código fuente COMPLETO y AUTOSUFICIENTE en UN SOLO ARCHIVO HTML (incluyendo HTML, CSS en <style> y JavaScript en <script>) para un simulador interactivo educativo.
+Necesito que generes el código fuente COMPLETO y AUTOSUFICIENTE en UN SOLO ARCHIVO HTML (titulado index.html) para ser alojado en la carpeta del artefacto con sus insumos complementarios si aplica.
 
-ESPECIFICACIONES DEL ARTEFACTO:
+INFORMACIÓN Y RUTAS DE DESPLIEGUE:
 - Materia: ${materia}
 - Tema: ${tema}
+- Ruta en Repositorio: artefactos/${materiaSlug}/${artefactoSlug}/index.html
+- URL Pública Final: https://luislopezv71-sudo.github.io/framework-pedagogico-ia/artefactos/${materiaSlug}/${artefactoSlug}/
 - Duración del Módulo: ${duracion}
 - Nivel Educativo: ${nivel}
-- Mecánica y Funcionalidad Interactiva: ${mecanica}
+- Mecánica e Interacción Esperada: ${mecanica}
 
 REQUISITOS TÉCNICOS Y PEDAGÓGICOS OBLIGATORIOS:
-1. TODO EL CÓDIGO EN UN SOLO ARCHIVO ejecutable directamente al hacer doble clic o subir a GitHub Pages.
-2. Diseño Responsive e Interfaz Moderna usando Tailwind CSS mediante CDN.
+1. TODO EL CÓDIGO EN UN SOLO ARCHIVO index.html (incluyendo HTML, Tailwind CSS vía CDN y JavaScript en <script>).
+2. Estructura modular: listo para funcionar al abrir el archivo o colocar insumos (.json / assets) en la misma carpeta.
 3. Retroalimentación Formativa Automática (Andamiaje/Scaffolding): Si el alumno falla, ofrecer pistas y explicaciones conceptuales.
 4. Persistencia de Progreso mediante localStorage (guardar puntuación o estado del ejercicio).
 5. Incluir botón de "Restablecer" y opción para descargar o copiar un reporte de resultados para el profesor.
-6. Código limpio, comentado y sin dependencias externas complejas.
+6. Código limpio, comentado y totalmente responsivo.
 
-Por favor entrega únicamente el código listo para copiar y guardar como archivo .html.`;
+Por favor entrega únicamente el código listo para copiar y guardar como index.html.`;
+
+      } else if (activeTab === 4) {
+        bannerText.innerHTML = `<i class="fa-solid fa-sitemap text-indigo-400 mr-2"></i>URL Oficial: <strong>https://luislopezv71-sudo.github.io/framework-pedagogico-ia/prompts/</strong>`;
+
+        promptText = `========================================================================
+RESUMEN DE RUTA Y ESTRUCTURA ORGANIZACIONAL DEL REPOSITORIO
+========================================================================
+
+Dashboard Interactivo Oficial:
+👉 https://luislopezv71-sudo.github.io/framework-pedagogico-ia/prompts/
+
+Estructura de Carpetas Generada para este Proyecto:
+
+framework-pedagogico-ia/
+├── README.md
+├── prompts/
+│   └── index.html                            # Dashboard Interactivo
+├── progresiones/
+│   └── ${materiaSlug}/
+│       └── ${unidadSlug}/
+│           ├── plan-unidad.md                # Doc 1: Planificación Didáctica
+│           └── fuente-notebooklm.txt         # Doc 2: Fuente Maestro para Podcast/Guías
+└── artefactos/
+    └── ${materiaSlug}/
+        └── ${artefactoSlug}/
+            ├── index.html                    # Artefacto Interactivo Ejecutable
+            └── datos.json / assets/          # Insumos complementarios (si aplica)
+
+------------------------------------------------------------------------
+URL Pública de la Práctica Interactiva:
+👉 https://luislopezv71-sudo.github.io/framework-pedagogico-ia/artefactos/${materiaSlug}/${artefactoSlug}/
+========================================================================`;
       }
 
       document.getElementById('prompt-output').value = promptText;
@@ -514,7 +585,7 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
       copyBtn.innerHTML = '<i class="fa-solid fa-check text-emerald-600"></i> ¡Copiado!';
       copyBtn.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-200');
 
-      showToast('Prompt copiado al portapapeles con éxito.', 'success');
+      showToast('Contenido copiado al portapapeles con éxito.', 'success');
 
       setTimeout(() => {
         copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copiar Prompt';
@@ -533,6 +604,7 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
       const customMateria = document.getElementById('input-custom-materia').value.trim();
       const materia = getMateriaValue();
       const tema = document.getElementById('input-tema').value || 'Sin Nombre';
+      const artefactoSlug = document.getElementById('input-slug-artefacto').value || getSlug(tema);
       const duracion = document.getElementById('input-duracion').value || '';
       const nivel = document.getElementById('input-nivel').value;
       const objetivo = document.getElementById('input-objetivo').value;
@@ -544,6 +616,7 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
         customMateria,
         materia,
         tema,
+        artefactoSlug,
         duracion,
         nivel,
         objetivo,
@@ -588,7 +661,6 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
           document.getElementById('input-materia').value = p.rawMateria;
           document.getElementById('input-custom-materia').value = p.customMateria || '';
         } else {
-          // Retrocompatibilidad
           const selectOptions = ['Matemáticas', 'Economía', 'Mercadotecnia', 'TICs'];
           if (selectOptions.includes(p.materia)) {
             document.getElementById('input-materia').value = p.materia;
@@ -602,6 +674,7 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
         handleMateriaChange();
 
         document.getElementById('input-tema').value = p.tema || '';
+        document.getElementById('input-slug-artefacto').value = p.artefactoSlug || getSlug(p.tema || '');
         document.getElementById('input-duracion').value = p.duracion || '';
         document.getElementById('input-nivel').value = p.nivel || 'Bachillerato / Preparatoria';
         document.getElementById('input-objetivo').value = p.objetivo || '';
