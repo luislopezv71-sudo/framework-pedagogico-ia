@@ -36,7 +36,7 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
   <!-- BARRA DE NAVEGACIÓN Y CRÉDITOS -->
-  <header class="bg-slate-900 text-white sticky top-0 z-50 border-b border-slate-800 shadow-md">
+  <header class="bg-slate-900 text-white sticky top-0 z-40 border-b border-slate-800 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap justify-between items-center gap-4">
       <div class="flex items-center space-x-3">
         <div class="bg-indigo-600 text-white p-2.5 rounded-xl shadow-lg">
@@ -93,7 +93,7 @@
             <i class="fa-solid fa-code text-indigo-400 text-lg mt-1"></i>
             <div>
               <h4 class="text-xs font-bold text-white uppercase tracking-wider">3. Artefacto HTML5</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Simuladores interáctivos con feedback y guardado.</p>
+              <p class="text-xs text-slate-400 mt-0.5">Simuladores interactivos con feedback y guardado.</p>
             </div>
           </div>
         </div>
@@ -200,22 +200,37 @@
             <i class="fa-solid fa-sliders text-indigo-600"></i> Parámetros de la Asignatura
           </h4>
 
+          <!-- SELECTOR DE MATERIA -->
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Materia / Disciplina</label>
-            <select id="input-materia" onchange="generateCurrentPrompt()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+            <select id="input-materia" onchange="handleMateriaChange()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
               <option value="Matemáticas">Matemáticas</option>
               <option value="Economía">Economía</option>
               <option value="Mercadotecnia">Mercadotecnia</option>
               <option value="TICs">TICs / Programación</option>
-              <option value="Otra Asignatura">Otra Asignatura</option>
+              <option value="Otra Asignatura">Otra Asignatura (Especificar...)</option>
             </select>
           </div>
 
+          <!-- INPUT MATERIA PERSONALIZADA (DINÁMICO) -->
+          <div id="custom-materia-container" class="hidden transition-all duration-300">
+            <label class="block text-xs font-semibold text-indigo-700 mb-1">Especifique el nombre de la materia</label>
+            <input type="text" id="input-custom-materia" oninput="generateCurrentPrompt()" placeholder="Ej. Historia Universal, Física, Contabilidad..." class="w-full text-xs bg-indigo-50/50 border border-indigo-200 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          </div>
+
+          <!-- TEMA / UNIDAD -->
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-1">Tema / Unidad Didáctica</label>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Tema / Unidad Didáctica o Progresión</label>
             <input type="text" id="input-tema" oninput="generateCurrentPrompt()" value="Sistemas de Ecuaciones Lineales y Aplicaciones" placeholder="Ej. Ley de la Oferta y la Demanda" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
           </div>
 
+          <!-- DURACIÓN DE LA PROGRESIÓN (NUEVO CAMPO) -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Duración de la Progresión / Unidad</label>
+            <input type="text" id="input-duracion" oninput="generateCurrentPrompt()" value="2 semanas / 6 sesiones de 50 min" placeholder="Ej. 10 horas estimadas, 4 sesiones de 1 hora" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          </div>
+
+          <!-- NIVEL EDUCATIVO -->
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Nivel Educativo</label>
             <select id="input-nivel" onchange="generateCurrentPrompt()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
@@ -226,6 +241,7 @@
             </select>
           </div>
 
+          <!-- OBJETIVO GENERAL -->
           <div>
             <label class="block text-xs font-semibold text-slate-700 mb-1">Objetivo General de Aprendizaje</label>
             <textarea id="input-objetivo" oninput="generateCurrentPrompt()" rows="3" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Describe lo que el alumno logrará al finalizar...">Resolver sistemas de ecuaciones aplicando modelos interactivos y contextualizados a situaciones de la vida real.</textarea>
@@ -255,7 +271,7 @@
             </button>
           </div>
 
-          <div class="relative flex-grow min-h-[360px] bg-slate-900 text-slate-100 rounded-2xl p-4 font-mono text-xs leading-relaxed overflow-hidden border border-slate-800 shadow-inner">
+          <div class="relative flex-grow min-h-[380px] bg-slate-900 text-slate-100 rounded-2xl p-4 font-mono text-xs leading-relaxed overflow-hidden border border-slate-800 shadow-inner">
             <textarea id="prompt-output" readonly class="w-full h-full bg-transparent text-slate-200 focus:outline-none resize-none custom-scrollbar" spellcheck="false"></textarea>
           </div>
         </div>
@@ -311,15 +327,56 @@
     </div>
   </footer>
 
+  <!-- NOTIFICACIONES Y MODALES (CUSTOM DIALOGS - NO BROWSER ALERT/CONFIRM) -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- MODAL DE CONFIRMACIÓN DE ELIMINACIÓN -->
+  <div id="confirm-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl border border-slate-200">
+      <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-xl mb-4 mx-auto">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <h4 class="text-base font-bold text-slate-900 text-center mb-1">¿Eliminar proyecto?</h4>
+      <p class="text-xs text-slate-500 text-center mb-6">Esta acción no se puede deshacer. Se eliminará de la memoria de tu navegador.</p>
+      <div class="flex items-center gap-3">
+        <button onclick="closeConfirmModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 rounded-xl transition-all">Cancelar</button>
+        <button id="btn-execute-delete" class="w-1/2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold py-2.5 rounded-xl transition-all shadow-sm">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
   <!-- LÓGICA JAVASCRIPT -->
   <script>
     let activeTab = 1;
+    let projectToDeleteId = null;
 
     // Inicialización al cargar la página
     document.addEventListener('DOMContentLoaded', () => {
-      generateCurrentPrompt();
+      handleMateriaChange();
       renderProjects();
     });
+
+    // Control dinámico de Materia Personalizada
+    function handleMateriaChange() {
+      const materiaSelect = document.getElementById('input-materia').value;
+      const customContainer = document.getElementById('custom-materia-container');
+      
+      if (materiaSelect === 'Otra Asignatura') {
+        customContainer.classList.remove('hidden');
+      } else {
+        customContainer.classList.add('hidden');
+      }
+      generateCurrentPrompt();
+    }
+
+    function getMateriaValue() {
+      const selectVal = document.getElementById('input-materia').value;
+      if (selectVal === 'Otra Asignatura') {
+        const customVal = document.getElementById('input-custom-materia').value.trim();
+        return customVal || 'Asignatura Personalizada';
+      }
+      return selectVal;
+    }
 
     // Cambio de pestañas
     function switchTab(tabIndex) {
@@ -349,8 +406,9 @@
 
     // Generador dinámico de Prompts
     function generateCurrentPrompt() {
-      const materia = document.getElementById('input-materia').value;
+      const materia = getMateriaValue();
       const tema = document.getElementById('input-tema').value || '[Tema o Unidad]';
+      const duracion = document.getElementById('input-duracion').value || '[Duración Estimada]';
       const nivel = document.getElementById('input-nivel').value;
       const objetivo = document.getElementById('input-objetivo').value || '[Objetivo de Aprendizaje]';
       const mecanica = document.getElementById('input-mecanica').value || '[Mecánica interactiva]';
@@ -364,14 +422,15 @@ Necesito que estructures una Progresión Didáctica completa y de alta calidad p
 
 INFORMACIÓN DEL CURSO:
 - Materia / Disciplina: ${materia}
-- Tema o Unidad Didáctica: ${tema}
+- Tema o Unidad Didáctica / Progresión: ${tema}
+- Duración Estimada: ${duracion}
 - Nivel Educativo: ${nivel}
 - Objetivo General de Aprendizaje: ${objetivo}
 
 POR FAVOR ESTRUCTURA LA RESPUESTA EN LAS SIGUIENTES SECCIONES:
 
 1. FICHA TÉCNICA Y DIAGNÓSTICO
-   - Resumen ejecutivo de la progresión.
+   - Resumen ejecutivo de la progresión (Dosificación estimada para: ${duracion}).
    - Ideas previas o prerrequisitos indispensables.
    - Errores conceptuales o "misconceptions" más frecuentes en los alumnos.
 
@@ -396,6 +455,7 @@ Tu tarea es transformar la siguiente unidad didáctica en un DOCUMENTO FUENTE MA
 INFORMACIÓN DE LA MATERIA:
 - Materia: ${materia}
 - Tema / Unidad: ${tema}
+- Duración Programada: ${duracion}
 - Nivel: ${nivel}
 - Objetivo: ${objetivo}
 
@@ -426,6 +486,7 @@ Necesito que generes el código fuente COMPLETO y AUTOSUFICIENTE en UN SOLO ARCH
 ESPECIFICACIONES DEL ARTEFACTO:
 - Materia: ${materia}
 - Tema: ${tema}
+- Duración del Módulo: ${duracion}
 - Nivel Educativo: ${nivel}
 - Mecánica y Funcionalidad Interactiva: ${mecanica}
 
@@ -453,6 +514,8 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
       copyBtn.innerHTML = '<i class="fa-solid fa-check text-emerald-600"></i> ¡Copiado!';
       copyBtn.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-200');
 
+      showToast('Prompt copiado al portapapeles con éxito.', 'success');
+
       setTimeout(() => {
         copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copiar Prompt';
         copyBtn.classList.remove('bg-emerald-50', 'text-emerald-700', 'border-emerald-200');
@@ -466,16 +529,22 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
     }
 
     function saveProjectToLocal() {
-      const materia = document.getElementById('input-materia').value;
+      const rawMateria = document.getElementById('input-materia').value;
+      const customMateria = document.getElementById('input-custom-materia').value.trim();
+      const materia = getMateriaValue();
       const tema = document.getElementById('input-tema').value || 'Sin Nombre';
+      const duracion = document.getElementById('input-duracion').value || '';
       const nivel = document.getElementById('input-nivel').value;
       const objetivo = document.getElementById('input-objetivo').value;
       const mecanica = document.getElementById('input-mecanica').value;
 
       const project = {
         id: Date.now(),
+        rawMateria,
+        customMateria,
         materia,
         tema,
+        duracion,
         nivel,
         objetivo,
         mecanica,
@@ -487,30 +556,60 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
       localStorage.setItem('genai_id_projects', JSON.stringify(projects));
       
       renderProjects();
-      alert('Proyecto "' + tema + '" guardado correctamente en la memoria local.');
+      showToast(`Proyecto "${tema}" guardado correctamente.`, 'success');
     }
 
-    function deleteProject(id) {
-      if (confirm('¿Deseas eliminar este proyecto guardado?')) {
-        let projects = getStoredProjects();
-        projects = projects.filter(p => p.id !== id);
-        localStorage.setItem('genai_id_projects', JSON.stringify(projects));
-        renderProjects();
-      }
+    function confirmDeleteProject(id) {
+      projectToDeleteId = id;
+      document.getElementById('confirm-modal').classList.remove('hidden');
+      document.getElementById('btn-execute-delete').onclick = executeDeleteProject;
+    }
+
+    function closeConfirmModal() {
+      document.getElementById('confirm-modal').classList.add('hidden');
+      projectToDeleteId = null;
+    }
+
+    function executeDeleteProject() {
+      if (!projectToDeleteId) return;
+      let projects = getStoredProjects();
+      projects = projects.filter(p => p.id !== projectToDeleteId);
+      localStorage.setItem('genai_id_projects', JSON.stringify(projects));
+      closeConfirmModal();
+      renderProjects();
+      showToast('Proyecto eliminado de la memoria local.', 'info');
     }
 
     function loadProject(id) {
       const projects = getStoredProjects();
       const p = projects.find(item => item.id === id);
       if (p) {
-        document.getElementById('input-materia').value = p.materia;
-        document.getElementById('input-tema').value = p.tema;
-        document.getElementById('input-nivel').value = p.nivel;
-        document.getElementById('input-objetivo').value = p.objetivo;
+        if (p.rawMateria) {
+          document.getElementById('input-materia').value = p.rawMateria;
+          document.getElementById('input-custom-materia').value = p.customMateria || '';
+        } else {
+          // Retrocompatibilidad
+          const selectOptions = ['Matemáticas', 'Economía', 'Mercadotecnia', 'TICs'];
+          if (selectOptions.includes(p.materia)) {
+            document.getElementById('input-materia').value = p.materia;
+            document.getElementById('input-custom-materia').value = '';
+          } else {
+            document.getElementById('input-materia').value = 'Otra Asignatura';
+            document.getElementById('input-custom-materia').value = p.materia || '';
+          }
+        }
+
+        handleMateriaChange();
+
+        document.getElementById('input-tema').value = p.tema || '';
+        document.getElementById('input-duracion').value = p.duracion || '';
+        document.getElementById('input-nivel').value = p.nivel || 'Bachillerato / Preparatoria';
+        document.getElementById('input-objetivo').value = p.objetivo || '';
         document.getElementById('input-mecanica').value = p.mecanica || '';
         
         generateCurrentPrompt();
         window.scrollTo({ top: 400, behavior: 'smooth' });
+        showToast(`Proyecto "${p.tema}" cargado en los controles.`, 'info');
       }
     }
 
@@ -533,17 +632,18 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
         <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="bg-indigo-50 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-md border border-indigo-100">${p.materia}</span>
+              <span class="bg-indigo-50 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-md border border-indigo-100 max-w-[160px] truncate">${p.materia}</span>
               <span class="text-[10px] text-slate-400">${p.fecha}</span>
             </div>
             <h5 class="font-bold text-slate-800 text-sm mb-1 line-clamp-1">${p.tema}</h5>
+            ${p.duracion ? `<p class="text-[11px] text-indigo-600 font-medium mb-1"><i class="fa-regular fa-clock mr-1"></i>${p.duracion}</p>` : ''}
             <p class="text-xs text-slate-500 line-clamp-2 mb-3">${p.objetivo}</p>
           </div>
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
             <button onclick="loadProject(${p.id})" class="text-xs text-indigo-600 font-semibold hover:text-indigo-800 flex items-center gap-1">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Cargar
             </button>
-            <button onclick="deleteProject(${p.id})" class="text-xs text-rose-500 hover:text-rose-700">
+            <button onclick="confirmDeleteProject(${p.id})" class="text-xs text-rose-500 hover:text-rose-700">
               <i class="fa-solid fa-trash-can"></i>
             </button>
           </div>
@@ -553,6 +653,10 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
 
     function exportProjectsJSON() {
       const projects = getStoredProjects();
+      if (projects.length === 0) {
+        showToast('No hay proyectos para exportar.', 'warning');
+        return;
+      }
       const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(projects, null, 2));
       const downloadAnchor = document.createElement('a');
       downloadAnchor.setAttribute("href", dataStr);
@@ -560,6 +664,7 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
+      showToast('Archivo JSON de respaldo exportado correctamente.', 'success');
     }
 
     function importProjectsJSON(event) {
@@ -573,13 +678,45 @@ Por favor entrega únicamente el código listo para copiar y guardar como archiv
           if (Array.isArray(imported)) {
             localStorage.setItem('genai_id_projects', JSON.stringify(imported));
             renderProjects();
-            alert('¡Proyectos importados correctamente!');
+            showToast('¡Proyectos importados correctamente!', 'success');
+          } else {
+            showToast('El archivo JSON no posee un formato válido.', 'warning');
           }
         } catch (err) {
-          alert('Error al leer el archivo JSON.');
+          showToast('Error al leer el archivo JSON.', 'warning');
         }
       };
       reader.readAsText(file);
+    }
+
+    // TOAST NOTIFICATION SYSTEM
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      let bgColor = 'bg-slate-900 text-white';
+      let icon = 'fa-info-circle text-indigo-400';
+      if (type === 'success') {
+        bgColor = 'bg-emerald-950 text-emerald-100 border border-emerald-800';
+        icon = 'fa-circle-check text-emerald-400';
+      } else if (type === 'warning') {
+        bgColor = 'bg-amber-950 text-amber-100 border border-amber-800';
+        icon = 'fa-triangle-exclamation text-amber-400';
+      }
+
+      toast.className = `pointer-events-auto flex items-center gap-2 px-4 py-3 rounded-xl shadow-xl text-xs font-medium ${bgColor} transition-all duration-300 transform translate-y-2 opacity-0`;
+      toast.innerHTML = `<i class="fa-solid ${icon} text-sm"></i> <span>${message}</span>`;
+      
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
     }
   </script>
 </body>
