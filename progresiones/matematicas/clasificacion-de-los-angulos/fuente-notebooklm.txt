@@ -1,0 +1,217 @@
+================================================================================
+DOCUMENTO FUENTE MAESTRO PARA NOTEBOOKLM
+================================================================================
+INFORMACIÓN DE LA MATERIA Y CURSO:
+- Materia: Matemáticas (Pensamiento Matemático III / Geometría)
+- Catedrático: Luis Arturo López Vergara
+- Versión: 2026 (Desarrollo Propio)
+- Tema / Unidad: Clasificación de los ángulos (Complementarios, Suplementarios, Adyacentes y Opuestos por el Vértice)
+- Duración Programada: 3 sesiones de 60 minutos
+- Nivel Educativo: Bachillerato / Preparatoria
+- Objetivo General: Entender la clasificación de los ángulos (complementarios, suplementarios, adyacentes y opuestos por el vértice), resolución de ejercicios algebraicos y aplicación en problemas de la vida diaria.
+- Ruta de Archivo en Repositorio: progresiones/matematicas/clasificacion-de-los-angulos/fuente-notebooklm.txt
+================================================================================
+
+SECCIÓN 1: DOCUMENTO BASE DE PROFUNDIZACIÓN
+
+1.1 Introducción Narrativa: La Geometría Invisible de Nuestro Entorno
+Desde la estructura de un puente colgante hasta las tuberías de una refinería o el diseño de los carriles en un circuito de carreras, el mundo construido por la humanidad no se sostiene por azar. Se sostiene mediante una fina red de fuerzas y direcciones organizadas a través de relaciones angulares.
+
+Cuando observas una tijera abriéndose, el marco rectangular de una ventana dividida por un bisel o las sombras proyectadas por una torre solar a distintas horas del día, estás presenciando principios geométricos en acción. Los ángulos no son simples figuras estáticas dibujadas sobre un cuaderno de cuadrícula; son la medida de la rotación, el cambio de dirección y el equilibrio en la arquitectura, la física y el diseño industrial. Entender cómo se relacionan entre sí dos o más ángulos permite predecir el comportamiento de estructuras complejas y resolver ecuaciones desconocidas a partir de principios simétricos sencillos.
+
+--------------------------------------------------------------------------------
+
+1.2 Desarrollo Teórico Exhaustivo y Metáforas Didácticas
+
+A. Ángulos Complementarios
+- Definición Formal: Dos ángulos son complementarios si la suma de sus medidas en el sistema sexagesimal es exactamente igual a 90° (un ángulo recto). Matemáticamente, si α y β son complementarios, se cumple que:
+  α + β = 90°
+  No es condición necesaria que los ángulos estén contiguos o compartan el mismo vértice; la propiedad radica exclusivamente en que sus magnitudes agrupadas completen un cuarto de giro perfecto (90°).
+- Metáfora Didáctica (La Esquina Perfecta): Imagina la esquina de un cuadro fotográfico de 90°. Si trazas un corte desde el vértice hacia el interior, la esquina queda dividida en dos fragmentos. Sin importar qué tan ancho o estrecho sea un fragmento, el sobrante debe ajustarse para que la suma total vuelva a formar la esquina cuadrada exacta.
+- Aspecto Clave a Recordar: El complemento de un ángulo θ es siempre 90° - θ.
+
+B. Ángulos Suplementarios
+- Definición Formal: Dos ángulos son suplementarios si la suma de sus medidas da como resultado exactamente 180° (un ángulo llano o plano). Matemáticamente:
+  α + β = 180°
+  Al igual que los complementarios, no requieren estar físicamente unidos para ser suplementarios.
+- Metáfora Didáctica (El Llano del Horizonte): Piensa en la línea plana del horizonte marítimo (180°). Si un mástil de barco inclinado emerge del agua en un punto del horizonte, divide el espacio superior en dos ángulos. La apertura de la izquierda más la apertura de la derecha siempre sumarán el horizonte completo.
+- Aspecto Clave a Recordar: El suplemento de un ángulo θ es siempre 180° - θ.
+
+C. Ángulos Adyacentes
+- Definición Formal: Dos ángulos son adyacentes si y solo si cumplen simultáneamente tres condiciones geométricas:
+  1. Comparten el mismo vértice.
+  2. Comparten un lado común.
+  3. No tienen puntos interiores comunes (no se superponen ni están uno dentro del otro).
+- Metáfora Didáctica (Las Habitaciones Contiguas): Son como dos cuartos contiguos en una vivienda. La pared divisoria es el lado común, la esquina del pasillo es el vértice, y cada cuarto ocupa su propio espacio sin invadir el del vecino.
+- Diferenciación Crucial: Dos ángulos pueden ser adyacentes sin ser complementarios ni suplementarios (por ejemplo, dos ángulos de 20° y 30° adyacentes suman 50°). Sin embargo, cuando dos ángulos son adyacentes y además sus lados no comunes forman una línea recta, reciben el nombre especial de Par Lineal y son necesariamente suplementarios.
+
+D. Ángulos Opuestos por el Vértice
+- Definición Formal: Dos ángulos se denominan opuestos por el vértice cuando los lados de uno son las prolongaciones (rayos opuestos) de los lados del otro. Ocurren siempre que dos líneas rectas se intersectan en un único punto.
+- Teorema de Congruencia: Los ángulos opuestos por el vértice son congruentes (tienen exactamente la misma medida).
+  α = γ  y  β = δ
+- Metáfora Didáctica (El Efecto Tijera): Observa una tijera. El pivote central representa el vértice. Si abres las agarraderas 35°, las hojas del lado opuesto se abrirán exactamente 35°. No es posible alterar el ángulo de un lado sin que el opuesto cambie en la misma proporción exacta.
+
+--------------------------------------------------------------------------------
+
+1.3 Casos Prácticos Completamente Resueltos
+
+Caso Práctico 1: Modelación de una Rampa Urbana (Ángulos Complementarios y Suplementarios)
+- Planteamiento: Un equipo de arquitectura está diseñando la estructura de soporte para una rampa de patinaje. La escuadra principal de soporte forma un ángulo recto de 90° en la base. Una viga de refuerzo interior divide este ángulo recto en dos partes expresadas algebraicamente como:
+  ∠A = (3x + 15)°  y  ∠B = (2x - 5)°
+  1. Encuentra el valor de la variable x.
+  2. Determina la medida de cada ángulo.
+  3. Encuentra el suplemento del ángulo ∠A.
+
+- Resolución Paso a Paso:
+  • Paso 1: Aplicar la propiedad de complementariedad. Como la viga divide el ángulo recto de 90°, los ángulos ∠A y ∠B son complementarios:
+    (3x + 15) + (2x - 5) = 90
+  • Paso 2: Simplificar y resolver la ecuación lineal.
+    5x + 10 = 90
+    5x = 90 - 10
+    5x = 80
+    x = 16
+  • Paso 3: Calcular las medidas angulares.
+    ∠A = 3(16) + 15 = 48 + 15 = 63°
+    ∠B = 2(16) - 5 = 32 - 5 = 27°
+    Comprobación: 63° + 27° = 90°.
+  • Paso 4: Calcular el suplemento de ∠A.
+    Suplemento de ∠A = 180° - ∠A = 180° - 63° = 117°
+
+Caso Práctico 2: Intersección de Estructuras Viales (Opuestos por el Vértice y Par Lineal)
+- Planteamiento: En la intersección de dos avenidas que se cruzan en forma de X, se generan cuatro ángulos alrededor del crucero central. Dos de los ángulos situados frente a frente están expresados por las ecuaciones:
+  ∠1 = (7x - 30)°  y  ∠3 = (4x + 15)°
+  1. Demuestra geométricamente la relación entre ∠1 y ∠3 y encuentra el valor de x.
+  2. Obtén la medida de los cuatro ángulos del crucero (∠1, ∠2, ∠3, ∠4).
+
+- Resolución Paso a Paso:
+  • Paso 1: Identificar la propiedad geométrica. Los ángulos ∠1 y ∠3 están formados por el cruce de dos líneas rectas y se encuentran frente a frente compartiendo el vértice. Por lo tanto, son opuestos por el vértice y sus medidas son iguales:
+    7x - 30 = 4x + 15
+  • Paso 2: Resolver la ecuación.
+    7x - 4x = 15 + 30
+    3x = 45
+    x = 15
+  • Paso 3: Obtener las medidas de ∠1 y ∠3.
+    ∠1 = 7(15) - 30 = 105 - 30 = 75°
+    ∠3 = 4(15) + 15 = 60 + 15 = 75°
+  • Paso 4: Determinar los ángulos contiguos (∠2 y ∠4) mediante el concepto de Par Lineal. Como ∠1 y ∠2 forman una línea recta continua, son suplementarios (180°):
+    ∠2 = 180° - ∠1 = 180° - 75° = 105°
+  • Paso 5: Conclusión del sistema completo. Dado que ∠4 es opuesto por el vértice a ∠2, también mide 105°.
+    Resultados Finales: ∠1 = 75°, ∠2 = 105°, ∠3 = 75°, ∠4 = 105°
+    Comprobación de vuelta completa: 75° + 105° + 75° + 105° = 360°.
+
+================================================================================
+
+SECCIÓN 2: GUION Y ESTRUCTURA PARA DEBATE (Podcast / Audio Overview)
+
+2.1 El Desafío Central de la Materia
+"¿Es la geometría espacial una simple memorización de fórmulas o una herramienta de deducción lógica que nos permite predecir el mundo visible sin necesidad de medirlo todo manualmente?"
+
+2.2 Tres Preguntas Provocadoras para las Dos Voces
+- Pregunta 1: "Si dos ángulos son adyacentes, ¿es obligatorio que sumen 180°, o estamos confundiendo la forma en que los ubicamos en el espacio con la suma de sus grados?"
+- Pregunta 2: "¿Por qué la mente humana tiende a confundir constantemente los conceptos de complementario (90°) y suplementario (180°), y qué truco mnemotécnico o visual destruye esa confusión para siempre?"
+- Pregunta 3: "En el cruce de dos vigas de acero, si solo podemos medir un único ángulo con nuestro transportador, ¿es verdad que automáticamente conocemos el valor de los otros tres ángulos sin haber colgado la cinta métrica en ellos?"
+
+2.3 Puntos de Giro y "Aha! Moments" (Errores Conceptuales Comunes)
+- Aha! Moment 1: La trampa de los ángulos opuestos.
+  • Error habitual: Creer que cualquier par de ángulos que se toquen en una punta o vértice son "opuestos por el vértice".
+  • Giro conceptual: No basta con que compartan un punto en común. Sus lados deben ser la extensión directa de las mismas líneas rectas. Si una de las líneas se dobla aunque sea un grado, la congruencia se rompe por completo.
+
+- Aha! Moment 2: "Complemento" vs "Suplemento" (Mnemotecnia alfabética).
+  • Giro conceptual: La C de Complemento viene antes en el abecedario que la S de Suplemento, igual que el 90 viene antes que el 180.
+    C -> 90°
+    S -> 180°
+
+- Aha! Moment 3: Adyacencia no implica suma fija.
+  • Giro conceptual: Decir "adyacente" solo habla de vecindad (estar al lado de, compartir pared). No dice nada sobre la medida. Para que sumen 180°, deben formar un "Par Lineal".
+
+================================================================================
+
+SECCIÓN 3: BANCO DE REPASO Y GLOSARIO
+
+3.1 Glosario Términos Clave
+1. Ángulo: Abertura formada entre dos semirrectas (lados) que se unen en un punto común llamado vértice.
+2. Ángulos Complementarios: Par de ángulos cuyas medidas suman exactamente 90°.
+3. Ángulos Suplementarios: Par de ángulos cuyas medidas suman exactamente 180°.
+4. Ángulos Adyacentes: Ángulos que comparten el mismo vértice y un lado común, sin superponer sus regiones interiores.
+5. Opuestos por el Vértice: Ángulos no adyacentes formados por la intersección de dos líneas rectas; son congruentes entre sí.
+6. Par Lineal: Par de ángulos adyacentes cuyos lados no comunes forman una recta; son siempre suplementarios (180°).
+7. Congruencia Geométrica: Propiedad que indica que dos figuras u objetos geométricos tienen la misma forma y la misma medida.
+8. Sistema Sexagesimal: Sistema de numeración en base 60 utilizado históricamente para medir ángulos, donde un giro completo equivale a 360°.
+
+3.2 Preguntas Frecuentes (FAQ)
+Q1: ¿Dos ángulos complementarios tienen que estar pegados uno al otro obligatoriamente?
+Respuesta: No. La complementariedad es una propiedad puramente numérica, no posicional. Si el ángulo ∠A mide 30° y está dibujado en México, y el ángulo ∠B mide 60° y está dibujado en Japón, ambos ángulos siguen siendo complementarios porque 30° + 60° = 90°. Si además están pegados compartiendo un lado, entonces se llaman adyacentes complementarios.
+
+Q2: ¿Pueden tres o más ángulos ser suplementarios si su suma da 180°?
+Respuesta: En la definición geométrica estricta de la educación media superior, los conceptos de complemento y suplemento se aplican exclusivamente a pares de ángulos (dos ángulos). Aunque tres ángulos de 60° dentro de un triángulo suman 180°, formalmente no se dicen "suplementarios entre sí", sino que la suma de sus ángulos interiores es 180°.
+
+Q3: ¿Cuál es la diferencia exacta entre ángulos adyacentes y un par lineal?
+Respuesta: Todos los pares lineales son adyacentes, pero no todos los ángulos adyacentes son pares lineales. Los ángulos adyacentes solo necesitan un lado y vértice común. Un par lineal requiere además que los otros dos lados formen una línea recta continua, garantizando que sumen 180°.
+
+Q4: Si dos ángulos son opuestos por el vértice y uno de ellos mide 90°, ¿cuánto miden los otros tres ángulos adyacentes y opuestos?
+Respuesta: Los cuatro ángulos medirán exactamente 90°. El opuesto por el vértice medirá 90° por congruencia, y los dos adyacentes medirán 90° cada uno para completar los 180° del par lineal. Las dos rectas en este caso son perpendiculares.
+
+================================================================================
+
+SECCIÓN 4: ESQUEMA VISUAL PARA DIAPOSITIVAS E INFOGRAFÍA
+
+Guion Visual Diapositiva por Diapositiva
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DIAPOSITIVA 1: PORTADA                                                  │
+│ • Título: La Geometría de las Relaciones Angulares                      │
+│ • Subtítulo: Complementarios, Suplementarios, Adyacentes y Opuestos     │
+│ • Catedrático: Luis Arturo López Vergara (Versión 2026)                 │
+│ • Elemento Visual: Ilustración vectorial minimalista de una tijera      │
+│   y una ventana con vigas resaltadas en colores Neón.                   │
+└─────────────────────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DIAPOSITIVA 2: EL PROBLEMA DEL MUNDO REAL                               │
+│ • Título: El Cruce de Estructuras: ¿Cómo predecir sin medir todo?       │
+│ • Texto: En ingeniería no podemos medir cada pieza manualmente.        │
+│ • Elemento Visual: Fotografía de la estructura de un puente de acero.    │
+│   Incrustación de incógnitas algebraicas (x, y) sobre las vigas.        │
+└─────────────────────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DIAPOSITIVA 3: CLASIFICACIÓN DUAL (SUMAS CLAVE)                         │
+│ • Layout: Comparativa en 2 columnas                                    │
+│ • Columna Izquierda: COMPLEMENTARIOS (Icono Esquina Recta = 90°)        │
+│   Fórmula: α + β = 90° | Regla Mnemotécnica: "C" de Cuadro               │
+│ • Columna Derecha: SUPLEMENTARIOS (Icono Línea Plana = 180°)            │
+│   Fórmula: α + β = 180° | Regla Mnemotécnica: "S" de Suelo             │
+└─────────────────────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DIAPOSITIVA 4: POSICIÓN Y CRUCES                                        │
+│ • Secciones:                                                            │
+│   1. Adyacentes: "Vecinos con pared compartida".                        │
+│   2. Opuestos por el Vértice: "El espejo congruente (α = β)".           │
+│ • Elemento Visual: Animación o esquema vectorial interactivo marcando  │
+│   los lados compartidos y las prolongaciones en X.                      │
+└─────────────────────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DIAPOSITIVA 5: CASO PRÁCTICO INTEGRADO (PASO A PASO)                    │
+│ • Título: Resolviendo el Crucero Vial                                   │
+│ • Imagen Central: Intersección en X con (7x - 30) y (4x + 15).          │
+│ • Desglose Lateral:                                                     │
+│   Paso 1: Igualar (Opuestos) -> x = 15                                  │
+│   Paso 2: Sustituir -> 75°                                              │
+│   Paso 3: Par Lineal -> 180° - 75° = 105°                               │
+└─────────────────────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DIAPOSITIVA 6: RETO FINAL / EVALUACIÓN INTERACTIVA                      │
+│ • Título: ¡Ponte a Prueba en el Simulador Digital!                      │
+│ • Texto: Escanea el código QR o accede a la ruta del simulador HTML5    │
+│   para resolver los niveles del Inspector Geométrico.                   │
+│ • Elemento Visual: Mockup de una laptop/tablet ejecutando el           │
+│   artefacto interactivo 'clasificacion-angulos-relacion'.              │
+└─────────────────────────────────────────────────────────────────────────┘
