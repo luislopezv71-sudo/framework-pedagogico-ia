@@ -75,3 +75,54 @@
 ---
 
 ## 3. Alineación Constructiva y Secuencia Didáctica
+
+### Sesión 1: Exploración e Identificación Relacional
+* **Inicio (15 min) - Detonador:**
+  * Presentar la imagen/diseño de una rampa de patinaje (Skatepark) o el plano de una estructura de puente de armadura.
+  * **Pregunta provocadora:** *"¿Por qué si un ingeniero cambia la inclinación de una viga 5°, automáticamente se desajusta el soporte opuesto de la estructura? ¿Cómo podemos calcular ese fallo sin medir directamente con regla?"*
+* **Desarrollo (30 min) - Indagación y Acción:**
+  * Trabajo en parejas con tiras articuladas o geoplanos para construir un ángulo recto (90°) y dividirlo libremente con una tercera tira. Medir ambos subángulos y notar qué constante permanece (Suma = 90°).
+  * Repetir el experimento sobre una línea recta llana (180°).
+  * Definición colaborativa en el pizarrón de los conceptos de Complemento, Suplemento y Adyacencia.
+* **Cierre (15 min) - Estructuración:**
+  * Tarea de clasificación rápida individual en tarjetas indexadas (DUA - Expresión múltiple): clasificar pares angulares dados en valores numéricos.
+
+### Sesión 2: Ecuaciones Algebraicas y Modelación en Cruces
+* **Inicio (10 min) - Activación:**
+  * Presentación de una tijera física o modelo digital. Observar los cuatro ángulos generados en la intersección en X al mover las aspas.
+* **Desarrollo (35 min) - Profundización:**
+  * Demostración formal guiada de la propiedad de ángulos opuestos por el vértice usando el suplemento común.
+  * Ejercicios de modelación algebraica con sistemas de rectas cruzadas (resolución paso a paso en libreta).
+  * Introducción técnica al simulador digital `artefactos/matematicas/clasificacion-angulos-relacion/index.html`.
+* **Cierre (15 min) - Síntesis Inicial:**
+  * Resolución colectiva de un caso del simulador proyectado en pantalla.
+
+### Sesión 3: Aplicación, Simulador Interactivo y Metacognición
+* **Inicio (10 min) - Encuadre del Reto:**
+  * Planteamiento del reto de laboratorio digital: *"Inspector Geométrico de Estructuras Urbano-Empresariales"*.
+* **Desarrollo (35 min) - Laboratorio Práctico DUA:**
+  * Los estudiantes ingresan de forma individual o en parejas al simulador HTML5 local.
+  * Resuelven los niveles de desafío: identificación de tipos de ángulos, cálculo de variables desconocidas mediante sliders interactivos y validación algebraica.
+  * Captura de evidencia en su bitácora de aprendizaje.
+* **Cierre (15 min) - Evaluación y Metacognición:**
+  * **Formulario / Ticket de salida metacognitivo:**
+    1. ¿Qué relación angular me resultó más fácil de identificar visualmente y cuál algebraicamente?
+    2. Si conozco un solo ángulo en la intersección de dos carreteras en X, ¿puedo conocer los otros tres? Explica el porqué.
+
+---
+
+## 4. Especificación del Artefacto Práctico Soberano
+
+### Datos del Artefacto
+* **Tipo:** Simulador e Inspector Interactivo de Relaciones Angulares (HTML5 Canvas + JS vanilla / CSS3 responsive).
+* **Ubicación en Repositorio:** `artefactos/matematicas/clasificacion-angulos-relacion/index.html`
+
+### Requerimientos Funcionales y Tecnológicos
+1. **Lienzo Gráfico (Canvas / SVG):**
+   * Representación interactiva de dos o tres vectores sobre un punto central (vértice) con controles de arrastre (drag & drop o sliders) para ajustar los ángulos en tiempo real.
+2. **Modos de Operación:**
+   * **Modo Exploración:** Permite modificar los ángulos libremente y visualiza en tiempo real los valores numéricos, resaltando con colores DUA (accesibles a daltonismo) los pares complementarios, suplementarios, adyacentes y opuestos por el vértice.
+   * **Modo Desafío / Evaluación Auto-calificable:** Genera un problema aleatorio (por ejemplo: *"Ajusta la línea B para que forme un ángulo complementario con A de 35°"* o *"Resuelve el valor de x si ∠1 = 4x y ∠3 = 120°"*).
+3. **Soporte DUA incorporado:**
+   * Alternancia de visualización: Numérica, Gráfica con arcos coloreados y Algebraica paso a paso.
+   * Feedback inmediato y explicativo tras cada intento en el modo desafío.
