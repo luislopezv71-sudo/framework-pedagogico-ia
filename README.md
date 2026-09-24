@@ -40,4 +40,4 @@ Integrar la Inteligencia Artificial Generativa y la programación web para siste
 
 ## 🚀 Acceso a Artefactos Interactivos
 Los alumnos pueden ingresar al repositorio de prácticas interactivas directamente aquí:  
-👉 **[Ver Portal de Artefactos Interactivos](https://<tu-usuario>.github.io/<tu-repositorio>/artefactos/)**
+👉 **[Ver Portal de Artefactos Interactivos](https://luislopezv71-sudo.github.io/framework-pedagogico-ia/artefactos/)**
